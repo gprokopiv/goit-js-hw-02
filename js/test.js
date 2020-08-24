@@ -250,35 +250,69 @@
     // colors.splice(1, 0, 'yellow', 'pink');
     // console.log(colors);    
 
-// Предположим, у вас есть массив языков программирования из четырех элементов.
-const languages = ['C', 'C++', 'Java', 'JavaScript'];
+// // Предположим, у вас есть массив языков программирования из четырех элементов.
+// const languages = ['C', 'C++', 'Java', 'JavaScript'];
 
-// Следующая операция заменяет второй элемент на новый.
-languages.splice(1, 1, 'Python');
+// // Следующая операция заменяет второй элемент на новый.
+// languages.splice(1, 1, 'Python');
 
-// В массиве языков теперь все еще четыре элемента,
-// но второй элемент теперь «Python» вместо «C++».
-console.log(languages); // ["C", "Python", "Java", "JavaScript"]
+// // В массиве языков теперь все еще четыре элемента,
+// // но второй элемент теперь «Python» вместо «C++».
+// console.log(languages); // ["C", "Python", "Java", "JavaScript"]
 
-// Вы можете заменить один элемент на несколько элементов,
-// передав больше аргументов
-languages.splice(2, 1, 'C#', 'Swift', 'Go');
+// // Вы можете заменить один элемент на несколько элементов,
+// // передав больше аргументов
+// languages.splice(2, 1, 'C#', 'Swift', 'Go');
 
-console.log(languages);
-// ["C", "Python", "C#", "Swift", "Go", "JavaScript"]
+// console.log(languages);
+// // ["C", "Python", "C#", "Swift", "Go", "JavaScript"]
 
 
-const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
-const newClients = ['Monkong', 'Singu'];
+// const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+// const newClients = ['Monkong', 'Singu'];
 
-const allClients = oldClients.concat(newClients);
+// const allClients = oldClients.concat(newClients);
 
-console.log(allClients);
-// ["Mango", "Ajax", "Poly", "Kiwi", "Monkong", "Singu"]
+// console.log(allClients);
+// // ["Mango", "Ajax", "Poly", "Kiwi", "Monkong", "Singu"]
 
-console.log(oldClients);
-// ["Mango", "Ajax", "Poly", "Kiwi"]
+// console.log(oldClients);
+// // ["Mango", "Ajax", "Poly", "Kiwi"]
 
-console.log(newClients);
-// ["Monkong", "Singu"]
+// console.log(newClients);
+// // ["Monkong", "Singu"]
 
+const fnA = function() {
+    console.log('Начала выполняться [fnA]');
+    fnB();
+    console.log('Продолжила выполняться [fnA] после выхода из [fnB]');
+  };
+  
+  const fnB = function() {
+    console.log('Выполняется [fnB]');
+  };
+  
+  console.log('Начал выполнение [main]');
+  fnA();
+  console.log('Продолжил выполняться [main] после выхода из [fnA]');
+  
+  /*
+   * Начал выполнение [main]
+   * Начала выполняться [fnA]
+   * Выполняется [fnB]
+   * Продолжила выполняться [fnA] после выхода из [fnB]
+   * Продолжил выполняться [main] после выхода из [fnA]
+   */
+  const count = function(countFrom = 0, countTo = 10, step = 1) {
+    console.log(`countFrom = ${countFrom}, countTo = ${countTo}, step = ${step}`);
+  
+    for (let i = countFrom; i <= countTo; i += step) {
+      console.log(i);
+    }
+  };
+  
+  count(1, 5); // countFrom = 1, countTo = 5, step = 1
+  count(2); // countFrom = 2, countTo = 10, step = 1
+  count(undefined, 5, 2); // countFrom = 0, countTo = 5, step = 2
+  count(); // countFrom = 0, countTo = 10, step = 1
+    
