@@ -282,37 +282,85 @@
 // console.log(newClients);
 // // ["Monkong", "Singu"]
 
-const fnA = function() {
-    console.log('Начала выполняться [fnA]');
-    fnB();
-    console.log('Продолжила выполняться [fnA] после выхода из [fnB]');
-  };
+// const fnA = function() {
+//     console.log('Начала выполняться [fnA]');
+//     fnB();
+//     console.log('Продолжила выполняться [fnA] после выхода из [fnB]');
+//   };
   
-  const fnB = function() {
-    console.log('Выполняется [fnB]');
-  };
+//   const fnB = function() {
+//     console.log('Выполняется [fnB]');
+//   };
   
-  console.log('Начал выполнение [main]');
-  fnA();
-  console.log('Продолжил выполняться [main] после выхода из [fnA]');
+//   console.log('Начал выполнение [main]');
+//   fnA();
+//   console.log('Продолжил выполняться [main] после выхода из [fnA]');
   
-  /*
-   * Начал выполнение [main]
-   * Начала выполняться [fnA]
-   * Выполняется [fnB]
-   * Продолжила выполняться [fnA] после выхода из [fnB]
-   * Продолжил выполняться [main] после выхода из [fnA]
-   */
-  const count = function(countFrom = 0, countTo = 10, step = 1) {
-    console.log(`countFrom = ${countFrom}, countTo = ${countTo}, step = ${step}`);
+//   /*
+//    * Начал выполнение [main]
+//    * Начала выполняться [fnA]
+//    * Выполняется [fnB]
+//    * Продолжила выполняться [fnA] после выхода из [fnB]
+//    * Продолжил выполняться [main] после выхода из [fnA]
+//    */
+//   const count = function(countFrom = 0, countTo = 10, step = 1) {
+//     console.log(`countFrom = ${countFrom}, countTo = ${countTo}, step = ${step}`);
   
-    for (let i = countFrom; i <= countTo; i += step) {
-      console.log(i);
-    }
-  };
+//     for (let i = countFrom; i <= countTo; i += step) {
+//       console.log(i);
+//     }
+//   };
   
-  count(1, 5); // countFrom = 1, countTo = 5, step = 1
-  count(2); // countFrom = 2, countTo = 10, step = 1
-  count(undefined, 5, 2); // countFrom = 0, countTo = 5, step = 2
-  count(); // countFrom = 0, countTo = 10, step = 1
+//   count(1, 5); // countFrom = 1, countTo = 5, step = 1
+//   count(2); // countFrom = 2, countTo = 10, step = 1
+//   count(undefined, 5, 2); // countFrom = 0, countTo = 5, step = 2
+//   count(); // countFrom = 0, countTo = 10, step = 1
     
+
+
+// const fn = function () {
+//     console.log(arguments);
+//     const args = Array.from(arguments);
+//     console.log(args);
+// }
+
+// fn(1,2,3);
+// fn(1,2,3,4,5);
+
+
+
+// const fn = function (a, b, c, ...args) {
+//   console.log(`$(a), $(b), $(c) `);
+
+//   console.log(args);
+// }
+
+// fn(1,2,3);
+// fn(1,2,3,4,5);
+
+// const add = function (a, b, c, ...args) {
+//   console.log(args);
+//   let total = 0;
+//   for (const arg of args) {
+//     total+= args;
+//   }
+//   return total;
+// }
+
+// console.log(add(1, 2, 3));
+// console.log(add(1, 2, 3, 4, 5));
+// const filterNumbers = function (array, ... args) {
+//   console.log('array:', array);
+//   console.log('args:', args);
+//   const uniqueElements = [];
+
+//   for(const element of array) {
+//     if (args.includes(element)) {
+//       uniqueElements.push(element);
+//       console.log(`$(element)  is everywhere`);
+//     }
+//   }
+//   console.log(uniqueElements);
+// };
+
+// console.log(filterNumbers([1, 2, 3], 10, 13, 17));
