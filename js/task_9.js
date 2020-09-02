@@ -33,35 +33,33 @@
 
 function isLoginValid (login, min = 4, max = 16) {
 
-        if (login.length >= min || login.length <= max) {
-               return true;
-             } else {
-               return false;
-             }
-    }
-  
-// function isLoginUnique  (allLogins, login) {
+        // if (login.length >= min && login.length <= max) {
+        //        return true;
+        //      } else {
+        //        return false;
+        //      }
 
-//     if (allLogins.includes(login)) {
-//       return false;
-//       }
-//       return true;
-     
-// }
-  function isLoginUnique  (allLogins, login) {
-  
-    for(const login of allLogins) {
-        if (allLogins.includes(login)) {
-            allLogins.push(login);
-            return true;
-        } else {
-          return false;
-        }
-        
+        // return login.length >= min && login.length <= max ? true : false;
+        return login.length >= min && login.length <= max;
+
     }
-}
-  
-  
+
+
+  function isLoginUnique(allLogins, login) {
+    return !allLogins.includes(login);
+    
+    // return allLogins.includes(login) ? false : true ;
+
+    // for(const value of allLogins) {
+    //       if (value===login) {
+    //          return false;
+    //       }  
+    //       // 
+    //   }
+    //   return true;
+  }
+
+
   function addLogin (allLogins, login) {
     'use strict';
     const SUCCESS = 'Логин успешно добавлен!';
@@ -69,24 +67,21 @@ function isLoginValid (login, min = 4, max = 16) {
     const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
     let message;
     
-    if (isLoginValid(login) !==  true) {
-         message = ERROR
-        } 
-    
-    
-//     if(login.isLoginValid) {
-//         login.isLoginUnique;
-//     } return ERROR; 
-//   }
 
-//   if (isLoginValid(true) && isLoginUnique(true)) {
-//     message `'Логин успешно добавлен!'`;
-//     logins.push(login);
-//     }  else {
-//         message `'Логин успешно добавлен!'`;
-//     };
+        if (!isLoginValid(login)) {
+        return  ERROR;
+        } 
+
+        if (!isLoginUnique(allLogins, login)) {
+          return REFUSAL;
+        }
+
+          allLogins.push(login) 
+                
+          return SUCCESS;
+      
   }
-  
+
   const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
   
   console.log(addLogin(logins, 'Ajax')); 
